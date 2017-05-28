@@ -5,7 +5,7 @@ class WorldsBestRestaurants::Scraper
   end
 
   def scrape_peppers_index
-    self.get_page.css("div#t1-50 li")
+    self.get_page.css("div#stacks_out")
   end
 
   def make_peppers

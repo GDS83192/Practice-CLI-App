@@ -1,6 +1,6 @@
-class WorldsBestRestaurants::Restaurant
+class WorldsHottestPeppers::Peppers
 
-  attr_accessor :name, :position, :location, :url, :head_chef, :website_url, :food_style, :best_dish, :contact, :description
+  attr_accessor :name, :position, :scoville_units, :url, :description
 
   @@all = []
 
@@ -16,8 +16,8 @@ class WorldsBestRestaurants::Restaurant
   def initialize(name=nil, url=nil, location=nil, position=nil)
     @name = name
     @url = url
-    @location = location
-    @position = position
+    @scoville_units = scoville_units
+    @description = description
     @@all << self
   end
 
