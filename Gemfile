@@ -5,7 +5,7 @@ gemspec
 PATH
   remote: .
   specs:
-    worlds-best-restaurants (0.1.1)
+    worlds-hottest-peppers (0.1.0)
 
 GEM
   remote: https://rubygems.org/
