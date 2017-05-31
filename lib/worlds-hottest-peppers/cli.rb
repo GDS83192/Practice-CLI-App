@@ -2,27 +2,27 @@ class WorldsBestRestaurants::CLI
 
   def call
     WorldsBestRestaurants::Scraper.new.make_restaurants
-    puts "Welcome to the 50 Best Restaurants in the World"
+    puts "Hello and welcome to the 50 hottest peppers in the world"
     start
   end
 
   def start
     puts ""
-    puts "What number restaurants would you like to see? 1-10, 11-20, 21-30, 31-40 or 41-50?"
+    puts "Which peppers would you like to see? 1-10, 11-20, 21-30, 31-40 or 41-50?"
     input = gets.strip.to_i
 
-    print_restaurants(input)
+    print_peppers(input)
 
     puts ""
-    puts "What restaurant would you like more information on?"
+    puts "What pepper would you like more information on?"
     input = gets.strip
 
-    restaurant = WorldsBestRestaurants::Restaurant.find(input.to_i)
+    restaurant = WorldsHottestPeppers::Pepper.find(input.to_i)
 
-    print_restaurant(restaurant)
+    print_pepper(pepper)
 
     puts ""
-    puts "Would you like to see another restaurant? Enter Y or N"
+    puts "Would you like to see another pepper? Enter Y or N"
 
     input = gets.strip.downcase
     if input == "y"
@@ -34,11 +34,11 @@ class WorldsBestRestaurants::CLI
     end
   end
 
-  def print_restaurant(restaurant)
+  def print_pepper(pepper)
     puts ""
-    puts "----------- #{restaurant.name} - #{restaurant.position} -----------"
+    puts "----------- #{pepper.name} - #{pepper.position} -----------"
     puts ""
-    puts "Location:           #{restaurant.location}"
+    puts "Name:           #{pepper.name}"
     puts "Head Chef:          #{restaurant.head_chef}"
     puts "Style of Food:      #{restaurant.food_style}"
     puts "Standout Dish:      #{restaurant.best_dish}"
