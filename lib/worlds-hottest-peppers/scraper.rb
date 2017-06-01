@@ -1,10 +1,10 @@
-class WorldsBestRestaurants::Scraper
+class WorldsHottestPeppers::Scraper
 
   def get_page
     Nokogiri::HTML(open("https://www.cayennediane.com/big-list-of-hot-peppers/"))
   end
 
-  def scraper_peppers_index
+  def scrape_peppers_index
     self.get_page.css("div#stacks_out")
   end
 

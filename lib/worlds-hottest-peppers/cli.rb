@@ -1,7 +1,7 @@
-class WorldsBestRestaurants::CLI
+class WorldsHottestPeppers::CLI
 
   def call
-    WorldsBestRestaurants::Scraper.new.make_restaurants
+    WorldsHottestPeppers::Scraper.new.make_peppers
     puts "Hello and welcome to the 50 hottest peppers in the world"
     start
   end
@@ -17,7 +17,7 @@ class WorldsBestRestaurants::CLI
     puts "What pepper would you like more information on?"
     input = gets.strip
 
-    restaurant = WorldsHottestPeppers::Pepper.find(input.to_i)
+    restaurant = WorldsHottestPeppers::Peppers.find(input.to_i)
 
     print_pepper(pepper)
 
@@ -54,8 +54,7 @@ class WorldsBestRestaurants::CLI
     puts "---------- Pepper #{from_number} - #{from_number+9} ----------"
     puts ""
     WorldsHottestPeppers::Pepper.all[from_number-1, 10].each.with_index(from_number) do |restaurant, index|
-      puts "#{index}. #{pepper.name}
+      puts "#{index}. #{pepper.name}"
     end
   end
-
 end
